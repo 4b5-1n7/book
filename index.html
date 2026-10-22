@@ -19,14 +19,14 @@
 /* РАЗМЕРЫ ОБЛОЖЕК: доля ширины левой колонки. Меняйте эти четыре числа */
 --audio-w:158%;--ebook-w:268%;--both-ebook-w:165%;--both-audio-w:82%;
 /* СМЕЩЕНИЕ ОБЛОЖЕК: отрицательное число сдвигает влево, положительное вправо (например -8% или 6%) */
---covers-x:9%;
+--covers-x:8%;
 /* предел высоты обложек, чтобы всё помещалось на экран (на телефонах не действует) */
 --capH:9999px}
 @media (min-width:821px){:root{--capH:calc(100svh - 290px)}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:1.0625rem/1.65 var(--font)}
 .dots{height:10px;background:radial-gradient(circle,var(--ink) 1.2px,transparent 1.6px) 0 0/9px 9px}
-header,main,footer{max-width:1360px;margin:0 auto;padding:0 24px}
+header,main,footer{max-width:1360px;margin:0 auto;padding:0 22px}
 header{display:flex;justify-content:flex-end;padding-top:14px}
 .lang button{font:inherit;font-size:1rem;background:none;border:2px solid var(--ink);padding:2px 14px;cursor:pointer;color:var(--ink)}
 .lang button+button{margin-left:-2px}
