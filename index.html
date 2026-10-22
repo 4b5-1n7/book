@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Название книги</title>
+<meta name="description" content="">
+<meta property="og:image" content="cover-audio.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23000'/%3E%3C/svg%3E">
+<style>
+:root{color-scheme:dark;--ink:#fff;--paper:#000;--mute:#a8a8a8;--grey:#2a2a2a;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.125rem/1.65 var(--serif)}
+.dots{height:10px;background:radial-gradient(circle,var(--ink) 1.2px,transparent 1.6px) 0 0/9px 9px}
+header,main,footer{max-width:1100px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:flex-end;padding-top:20px}
+.lang button{font:inherit;font-size:1rem;background:none;border:2px solid var(--ink);padding:2px 14px;cursor:pointer;color:var(--ink)}
+.lang button+button{margin-left:-2px}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;padding:40px 0 64px}
+#covers{width:100%;display:flex;align-items:center;justify-content:center;min-height:320px}
+#covers img{display:block;max-width:100%;height:auto}
+#cAudio{width:100%}
+#cEbook{width:52%;aspect-ratio:2/3;object-fit:cover;box-shadow:0 0 0 2px var(--ink)}
+#covers[data-plan=both] #cAudio{width:68%}
+#covers[data-plan=both] #cEbook{width:38%;margin-left:-14%;position:relative}
+#covers[data-plan=read] #cAudio,#covers[data-plan=listen] #cEbook{display:none}
+#covers[data-plan=listen] #cAudio{width:100%}
+.author{margin:0;color:var(--mute);font-style:italic}
+h1{font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.05;font-weight:400;margin:.15em 0 .4em;letter-spacing:-.01em}
+.desc{margin:0 0 32px;max-width:34em}
+fieldset{border:0;margin:0 0 20px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+legend{padding:0;margin-bottom:10px;font-weight:700}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.opt span{display:block;height:100%;padding:12px 16px;border:2px solid var(--ink);line-height:1.35}
+.opt small{display:block;font-size:.88rem;color:var(--mute)}
+.opt input:checked+span{background:var(--ink);color:var(--paper)}
+.opt input:checked+span small{color:#444}
+.opt input:focus-visible+span{outline:3px solid var(--ink);outline-offset:3px}
+.soon span{background:var(--grey);border:2px dashed #6a6a6a;color:#8a8a8a;cursor:not-allowed}
+.soon small{color:#8a8a8a}
+.buy{display:inline-block;background:var(--ink);color:var(--paper);padding:14px 36px;text-decoration:none;font-weight:700;border:2px solid var(--ink)}
+.buy:hover{background:var(--paper);color:var(--ink)}
+.buy:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.left{display:flex;flex-direction:column;align-items:center;gap:24px}
+.peek{font:inherit;background:none;color:var(--ink);border:2px solid var(--ink);padding:10px 28px;cursor:pointer}
+.peek:hover{background:var(--ink);color:var(--paper)}
+.peek:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.tg{margin:12px 0 0;font-size:.95rem;color:var(--mute)}
+.buy[aria-disabled=true]{background:var(--grey);border-color:var(--grey);color:#8a8a8a;pointer-events:none}
+dialog{width:min(640px,calc(100% - 32px));max-height:85vh;padding:0;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font:inherit}
+dialog::backdrop{background:rgba(0,0,0,.8)}
+body:has(dialog[open]){overflow:hidden}
+.dlg-head{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 24px;background:var(--paper);border-bottom:2px solid var(--ink)}
+.dlg-head h2{font-size:1.5rem;font-weight:400;margin:0}
+.dlg-body{padding:20px 24px 28px}
+.note{color:var(--mute);font-style:italic;margin:0 0 20px}
+.text{font-size:1.2rem}
+.text p{margin:0 0 1em}
+.text p:last-child{margin:0}
+.close{font:inherit;background:none;color:var(--ink);border:2px solid var(--ink);padding:4px 16px;cursor:pointer}
+.close:hover{background:var(--ink);color:var(--paper)}
+.close:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+footer{padding-top:32px;padding-bottom:40px}
+a{color:inherit}
+@media (max-width:820px){.hero{grid-template-columns:1fr;gap:32px}fieldset{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="lang" role="group" aria-label="Language"><button data-l="ru">RU</button><button data-l="en">EN</button></div></header>
+<main>
+<section class="hero">
+  <div class="left">
+    <div id="covers" data-plan="both">
+      <img id="cAudio" src="cover-audio.jpg" alt="">
+      <img id="cEbook" alt="">
+    </div>
+    <button class="peek" id="peek" type="button" aria-haspopup="dialog"></button>
+  </div>
+  <div>
+    <p class="author" data-t="author"></p>
+    <h1 data-t="title"></h1>
+    <p class="desc" data-t="desc"></p>
+    <fieldset>
+      <legend data-t="choose"></legend>
+      <label class="opt"><input type="checkbox" id="fRead" checked><span><b data-t="read"></b><small data-t="readSub"></small></span></label>
+      <label class="opt"><input type="checkbox" id="fListen" checked><span><b data-t="listen"></b><small data-t="listenSub"></small></span></label>
+      <label class="opt"><input type="checkbox" id="fBoth" checked><span><b data-t="both"></b><small data-t="bothSub"></small></span></label>
+      <div class="opt soon" aria-disabled="true"><span><b data-t="print"></b><small data-t="printSub"></small></span></div>
+    </fieldset>
+    <a class="buy" id="buy" target="_blank" rel="noopener" data-t="buy"></a>
+    <p class="tg" data-t="tg"></p>
+  </div>
+</section>
+<dialog id="excerpt" aria-labelledby="exTitle">
+  <div class="dlg-head"><h2 id="exTitle" data-t="exTitle"></h2><button class="close" id="close" type="button" data-t="exClose"></button></div>
+  <div class="dlg-body"><p class="note" data-t="exNote"></p><div class="text" data-t="excerpt"></div></div>
+</dialog>
+</main>
+<div class="dots" aria-hidden="true"></div>
+<footer><span data-t="contact"></span> <a id="mail"></a></footer>
+
+<script>
+// ===== НАСТРОЙКИ: замените значения на свои =====
+const CONFIG = {
+  email: "your@email.com",
+  links: {
+    ru: { read: "https://tribute.tg/RU-READ",   listen: "https://tribute.tg/RU-LISTEN",   both: "https://tribute.tg/RU-BOTH" },
+    en: { read: "https://tribute.tg/EN-READ",   listen: "https://tribute.tg/EN-LISTEN",   both: "https://tribute.tg/EN-BOTH" }
+  }
+};
+// Тексты. Курсив и жирный в отрывке: <em>…</em> и <strong>…</strong>
+const T = {
+  ru: {
+    author: "Имя Автора", title: "Название книги",
+    desc: "Здесь короткое описание книги: о чём она, для кого и что получит читатель. Две–три фразы.",
+    choose: "Выберите формат",
+    read: "Читать", readSub: "Электронная книга",
+    listen: "Слушать", listenSub: "Аудиокнига",
+    both: "Всё вместе", bothSub: "Электронная книга + аудиокнига одним набором",
+    print: "Печатная версия", printSub: "Ожидается в продаже",
+    buy: "Перейти к оплате", tg: "Для покупки необходим аккаунт Telegram.", exOpen: "Читать фрагмент", exClose: "Закрыть",
+    exTitle: "Фрагмент книги", exNote: "Половина вводной главы",
+    excerpt: "<p>0. Введение</p><p></p><p>Замените этот текст половиной вводной главы. Здесь сохраняется <em>курсив</em> и <strong>жирное выделение</strong>, как в оригинале.</p>",
+    contact: "Связь через адрес электронной почты:"
+  },
+  en: {
+    author: "Author Name", title: "Book Title",
+    desc: "A short description of the book goes here: what it is about, who it is for and what the reader gets. Two or three sentences.",
+    choose: "Choose a format",
+    read: "Read", readSub: "E-book",
+    listen: "Listen", listenSub: "Audiobook",
+    both: "Both", bothSub: "E-book + audiobook as one set",
+    print: "Print edition", printSub: "Coming soon",
+    buy: "Go to checkout", tg: "A Telegram account is required to buy.", exOpen: "Read a sample", exClose: "Close",
+    exTitle: "Sample", exNote: "Half of the introduction",
+    excerpt: "<p>Replace this with half of the introduction. <em>Italics</em> and <strong>bold</strong> are kept exactly as in the original.</p>",
+    contact: "Contact via email:"
+  }
+};
+
+const $ = s => document.querySelector(s);
+let lang = new URLSearchParams(location.search).get("lang");
+if (!T[lang]) lang = (navigator.language || "ru").toLowerCase().startsWith("ru") ? "ru" : "en";
+let r = true, l = true;
+
+function render() {
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.title = t.title + " — " + t.author;
+  $("meta[name=description]").content = t.desc;
+  document.querySelectorAll("[data-t]").forEach(e => e.innerHTML = t[e.dataset.t]);
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === lang));
+  const eb = $("#cEbook");
+  eb.onerror = () => { eb.onerror = null; eb.src = "cover-audio.jpg"; };
+  eb.src = "cover-ebook-" + lang + ".jpg";
+  eb.alt = t.title + " (" + t.readSub + ")";
+  $("#cAudio").alt = t.title + " (" + t.listenSub + ")";
+  const plan = r && l ? "both" : r ? "read" : l ? "listen" : "";
+  $("#fRead").checked = r; $("#fListen").checked = l; $("#fBoth").checked = r && l;
+  $("#covers").dataset.plan = plan || "both";
+  const b = $("#buy");
+  if (plan) { b.href = CONFIG.links[lang][plan]; b.removeAttribute("aria-disabled"); }
+  else { b.removeAttribute("href"); b.setAttribute("aria-disabled", "true"); }
+  b.title = t.tg;
+  $("#peek").textContent = t.exOpen;
+  $("#mail").href = "mailto:" + CONFIG.email;
+  $("#mail").textContent = CONFIG.email;
+}
+$("#fRead").onchange = e => { r = e.target.checked; render(); };
+$("#fListen").onchange = e => { l = e.target.checked; render(); };
+$("#fBoth").onchange = () => { r = l = true; render(); };
+$("#peek").onclick = () => $("#excerpt").showModal();
+$("#close").onclick = () => $("#excerpt").close();
+$("#excerpt").addEventListener("click", e => { if (e.target === e.currentTarget) e.currentTarget.close(); });
+document.querySelectorAll(".lang button").forEach(b => b.onclick = () => {
+  lang = b.dataset.l;
+  try { history.replaceState(null, "", "?lang=" + lang); } catch (e) {}
+  render();
+});
+render();
+</script>
+</body>
+</html>
