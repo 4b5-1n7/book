@@ -17,7 +17,7 @@
 @font-face{font-family:Lato;font-style:italic;font-weight:700;font-display:swap;src:url(fonts/lato-bold-italic.woff2) format("woff2")}
 :root{color-scheme:dark;--ink:#fff;--paper:#000;--mute:#a8a8a8;--grey:#2a2a2a;--font:Lato,"Helvetica Neue",Arial,sans-serif;
 /* РАЗМЕРЫ ОБЛОЖЕК: доля ширины левой колонки. Меняйте эти четыре числа */
---audio-w:42%;--ebook-w:88%;--both-ebook-w:70%;--both-audio-w:38%}
+--audio-w:82%;--ebook-w:98%;--both-ebook-w:80%;--both-audio-w:68%}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:1.0625rem/1.65 var(--font)}
 .dots{height:10px;background:radial-gradient(circle,var(--ink) 1.2px,transparent 1.6px) 0 0/9px 9px}
@@ -29,7 +29,7 @@ header{display:flex;justify-content:flex-end;padding-top:20px}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;padding:40px 0 64px}
 #covers{width:100%;display:flex;align-items:center;justify-content:center;min-height:320px}
 #covers img{display:block;max-width:100%;height:auto}
-#cAudio{width:var(--audio-w);border-radius:50%}
+#cAudio{width:var(--audio-w);border-radius:10%}
 #cEbook{width:var(--ebook-w);aspect-ratio:2/3;object-fit:cover;box-shadow:0 0 0 2px var(--ink)}
 #covers[data-plan=both]{align-items:flex-end}
 #covers[data-plan=both] #cEbook{order:1;width:var(--both-ebook-w)}
