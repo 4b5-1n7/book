@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Название книги</title>
+<title>Имманентный Разум: Абсолютное без Трансцендентного</title>
 <meta name="description" content="">
 <meta property="og:image" content="cover-audio.jpg">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -17,7 +17,7 @@
 @font-face{font-family:Lato;font-style:italic;font-weight:700;font-display:swap;src:url(fonts/lato-bold-italic.woff2) format("woff2")}
 :root{color-scheme:dark;--ink:#fff;--paper:#000;--mute:#a8a8a8;--grey:#2a2a2a;--font:Lato,"Helvetica Neue",Arial,sans-serif;
 /* РАЗМЕРЫ ОБЛОЖЕК: доля ширины левой колонки. Меняйте эти четыре числа */
---audio-w:82%;--ebook-w:98%;--both-ebook-w:80%;--both-audio-w:68%}
+--audio-w:82%;--ebook-w:138%;--both-ebook-w:95%;--both-audio-w:48%}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:1.0625rem/1.65 var(--font)}
 .dots{height:10px;background:radial-gradient(circle,var(--ink) 1.2px,transparent 1.6px) 0 0/9px 9px}
@@ -29,7 +29,7 @@ header{display:flex;justify-content:flex-end;padding-top:20px}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;padding:40px 0 64px}
 #covers{width:100%;display:flex;align-items:center;justify-content:center;min-height:320px}
 #covers img{display:block;max-width:100%;height:auto}
-#cAudio{width:var(--audio-w);border-radius:90%}
+#cAudio{width:var(--audio-w);border-radius:98%}
 #cEbook{width:var(--ebook-w);aspect-ratio:2/3;object-fit:cover;box-shadow:0 0 0 2px var(--ink)}
 #covers[data-plan=both]{align-items:flex-end}
 #covers[data-plan=both] #cEbook{order:1;width:var(--both-ebook-w)}
@@ -247,33 +247,33 @@ written on behalf of the Pennsylvania Assembly to the governor</em></p>
 <script>
 // ===== НАСТРОЙКИ: замените значения на свои =====
 const CONFIG = {
-  email: "your@email.com",
+  email: "4b5olute.1n7elligence@gmail.com",
   links: {
-    ru: { read: "https://tribute.tg/RU-READ",   listen: "https://tribute.tg/RU-LISTEN",   both: "https://tribute.tg/RU-BOTH" },
-    en: { read: "https://tribute.tg/EN-READ",   listen: "https://tribute.tg/EN-LISTEN",   both: "https://tribute.tg/EN-BOTH" }
+    ru: { read: "https://web.tribute.tg/p/HSg",   listen: "https://web.tribute.tg/p/HSj",   both: "https://web.tribute.tg/p/HSn" },
+    en: { read: "https://web.tribute.tg/p/HSH",   listen: "https://web.tribute.tg/p/HSK",   both: "https://web.tribute.tg/p/HSM" }
   }
 };
 // Тексты. Курсив и жирный в отрывке: <em>…</em> и <strong>…</strong>
 const T = {
   ru: {
-    author: "Имя Автора", title: "Название книги",
+    author: "Михаил Сергеев", title: "Имманентный Разум: Абсолютное без Трансцендентного",
     desc: "<p>Жанр: интеллектуальный нон-фикшен с элементами публицистики, неакадемической философии и структурой трактата на остро-социальную тематику с общественно-политическим характером.</p><p>Это философская система, которая возвращает абсолютность истины и этики в мир без трансцендентного: она доказывает, что трансцендентное тождественно абсолютному Ничто, и именно поэтому разум, укоренённый в верифицируемом опыте, даёт более твёрдые основания для знания и морали, чем религиозный или идеологический авторитет – и предлагает читателю практический инструмент для строительства собственной ценностной системы и рациональной идентичности.</p>",
     choose: "Выберите формат",
     read: "Читать", readSub: "Электронная книга",
     listen: "Слушать", listenSub: "Аудиокнига",
-    both: "Всё вместе", bothSub: "Электронная книга + аудиокнига одним набором",
+    both: "Всё вместе", bothSub: "Одним набором: электронная книга + аудиокнига",
     print: "Печатная версия", printSub: "Ожидается в продаже",
     buy: "Перейти к оплате", tg: "Для покупки необходим аккаунт Telegram.", exOpen: "Читать фрагмент", exClose: "Закрыть",
     exTitle: "Фрагмент книги", exNote: "Половина вводной главы",
     contact: "Связь через адрес электронной почты:"
   },
   en: {
-    author: "Author Name", title: "Book Title",
+    author: "Mikhail Sergeev", title: "Immanent Reason: The Absolute Without the Transcendent",
     desc: "<p>Genre: intellectual nonfiction with elements of journalistic writing, non-academic philosophy, and the structure of a treatise on a highly social topic of a socio-political nature.</p><p>This is a philosophical system that restores the absoluteness of truth and ethics to a world without the transcendent: it demonstrates that the transcendent is identical to absolute Nothingness, and that is precisely why reason, rooted in verifiable experience, provides a more solid foundation for knowledge and morality than religious or ideological authority—and offers the reader a practical tool for constructing their own value system and rational identity.</p>",
     choose: "Choose a format",
     read: "Read", readSub: "E-book",
     listen: "Listen", listenSub: "Audiobook",
-    both: "Both", bothSub: "E-book + audiobook as one set",
+    both: "Both", bothSub: "E-book + audiobook as single set",
     print: "Print edition", printSub: "Coming soon",
     buy: "Go to checkout", tg: "A Telegram account is required to buy.", exOpen: "Read a sample", exClose: "Close",
     exTitle: "Sample", exNote: "Half of the introduction",
