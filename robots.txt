@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://4b5-1n7.github.io/book/sitemap.xml
