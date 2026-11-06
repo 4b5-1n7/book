@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem("theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -36,7 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVMM97PM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header><nav class="lang" aria-label="Language"><a href="../" hreflang="ru" lang="ru">RU</a><a href="./" hreflang="en" lang="en" aria-current="page">EN</a></nav></header>
+<header><nav class="lang" aria-label="Language"><a href="../" hreflang="ru" lang="ru">RU</a><a href="./" hreflang="en" lang="en" aria-current="page">EN</a></nav><button class="theme" id="theme" type="button" data-to-light="Switch to light theme" data-to-dark="Switch to dark theme" aria-label="Switch to light theme" title="Switch to light theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></header>
 <main>
 <section class="hero">
   <div class="left">
@@ -44,7 +45,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img id="cAudio" src="../cover-audio.jpg" alt="Immanent Reason: The Absolute Without the Transcendent (Audiobook)">
       <img id="cEbook" src="../cover-ebook-en.jpg" alt="Immanent Reason: The Absolute Without the Transcendent (E-book)" fetchpriority="high" onerror="this.onerror=null;this.src='../cover-audio.jpg'">
     </div>
-    <button class="peek" id="peek" type="button" aria-haspopup="dialog">Read a demo sample</button>
+    <div class="peeks">
+      <button class="peek" type="button" data-open="toc" aria-haspopup="dialog">View table of contents</button>
+      <button class="peek" type="button" data-open="excerpt" aria-haspopup="dialog">Read a demo sample</button>
+    </div>
   </div>
   <div class="right">
     <p class="author">Mikhail Sergeev</p>
@@ -62,10 +66,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="tg">A Telegram account is required to buy.</p>
       <noscript><p class="tg"><a href="https://web.tribute.tg/p/HSH">Read</a> · <a href="https://web.tribute.tg/p/HSK">Listen</a> · <a href="https://web.tribute.tg/p/HSM">Both</a></p></noscript>
     </div>
+    <div class="channel"><img src="../qr-ABSolute_INTelligence.jpg" alt="QR code of the author’s Telegram channel ABSolute INTelligence" width="112" height="107" loading="lazy"><p>Author’s Telegram channel<br><span>ABSolute INTelligence</span></p></div>
   </div>
 </section>
 <dialog id="excerpt" aria-labelledby="exTitle">
-  <div class="dlg-head"><h2 id="exTitle">Sample from “Immanent Reason”</h2><button class="close" id="close" type="button">Close</button></div>
+  <div class="dlg-head"><h2 id="exTitle">Sample from “Immanent Reason”</h2><button class="close" type="button">Close</button></div>
   <div class="dlg-body"><p class="note">Half of the introduction</p><div class="text">
 <h3 class="ch">0. Introduction</h3>
 <p>This introduction will examine the general methodology, philosophical concepts with varying degrees of flaw, the rationale for applying synthetic eclecticism, an analysis of dictatorial incentives to exploit the mind’s vulnerabilities, and the justification for the use of violence in a crisis situation.</p>
@@ -127,6 +132,55 @@ written on behalf of the Pennsylvania Assembly to the governor</em></p>
 <p>The philosophical deconstruction of the transcendent in this concept partly builds on the ideas of Friedrich Nietzsche while drawing on the principles of Popperian epistemology, positivism, and scientific skepticism [36–37]. The new approach is based on the ontological denial of errors as non-existent in immanent and objective reality. In this context, Nothingness is interpreted as an ontological synonym for falsehood, since any error is Non-Essential if it has not led to consequences in objective reality.</p>
 <p>The uniqueness of this approach lies in its dismantling of the traditional ontological dichotomy between the immanent and the transcendent, while preserving the value of the immanent and of absolute concepts. The metaphysics that is rejected is the transcendent and all its derivatives (God, the soul, eschatology, etc.), since they are indistinguishable from the non-essential Nothing. At the same time, the usefulness of metaphysics is acknowledged at various levels: on the personal level – in the form of existentialism – and on the external level – as epistemological physicalism.</p>
 <p>Without the creation of a powerful philosophical concept, the consistency, integrity, and comprehensiveness of an adequate worldview will always, to a greater or lesser extent, yield to obscurantist, marginal analogues. Thus, there is a persistent need to create a synthetic and eclectic concept that would honestly and consistently provide comprehensive answers to fundamental philosophical questions, while at the same time courageously, firmly, and uncompromisingly opposing those doctrines that are partially or entirely directed against its principles. This need becomes particularly pressing in the face of external, dictatorial pressure exerted through mythologized ideologemes grounded in a comprehensive philosophical paradigm.</p>
+  </div></div>
+</dialog>
+<dialog id="toc" aria-labelledby="tocTitle">
+  <div class="dlg-head"><h2 id="tocTitle">Table of contents of “Immanent Reason”</h2><button class="close" type="button">Close</button></div>
+  <div class="dlg-body"><div class="text">
+<h3 class="ch">CONTENT</h3>
+<ul class="toc">
+<li class="top"><span>Abstract</span><span>1</span></li>
+<li class="top"><span>Disclaimer</span><span>2</span></li>
+<li class="top"><span>Preface</span><span>3</span></li>
+<li class="top"><span>0. Introduction</span><span>15</span></li>
+<li class="sub"><span>0.1. Antagonistic positions</span><span>17</span></li>
+<li class="sub"><span>0.2. The necessity and distinctive features of synthetic eclecticism</span><span>39</span></li>
+<li class="sub"><span>0.3. The values of the oppressor and the exploitation of flaws in reason</span><span>43</span></li>
+<li class="sub"><span>0.4. Can violence be the lesser of two evils?</span><span>48</span></li>
+<li class="top"><span>1. The Non-essential transcendent as absolute nothingness</span><span>55</span></li>
+<li class="sub"><span>1.1. Nothingness in ontology</span><span>56</span></li>
+<li class="sub"><span>1.2. Absoluteness in essence</span><span>61</span></li>
+<li class="sub"><span>1.3. Essentially non-existent</span><span>68</span></li>
+<li class="sub"><span>1.4. Transcendence as such</span><span>71</span></li>
+<li class="top"><span>2. The ontological structure of absolutely true knowledge of the immanent reality of the world of empirical absolutism</span><span>75</span></li>
+<li class="sub"><span>2.1. Metamorphic transformation</span><span>77</span></li>
+<li class="sub"><span>2.2. Conceptual levels</span><span>82</span></li>
+<li class="sub"><span>2.3. Empirical absolutism</span><span>87</span></li>
+<li class="sub"><span>2.4. The paradox of knowledge</span><span>101</span></li>
+<li class="sub"><span>2.5. Absolute (a)morality</span><span>113</span></li>
+<li class="sub"><span>2.6. A space for thought and creativity</span><span>121</span></li>
+<li class="sub"><span>2.7. The prerogative and intention of the mind</span><span>132</span></li>
+<li class="top"><span>3. The degradation and primitivization of rational existence as a consequence of the transcendent, in contrast to the metaphysics of existentialism</span><span>158</span></li>
+<li class="sub"><span>3.1. The connection between theological and magical thinking</span><span>166</span></li>
+<li class="sub"><span>3.2. The crimes of theism and the contradictions of religion</span><span>169</span></li>
+<li class="sub"><span>3.3. Parasitism, primitivization, and the dissection of the mind</span><span>185</span></li>
+<li class="sub"><span>3.4. Spirituality as shackles for the capable mind and its usefulness as a crutch for the weak and dysfunctional</span><span>194</span></li>
+<li class="sub"><span>3.5. Totalitarianism and religiosity, spirituality and dictatorship</span><span>207</span></li>
+<li class="sub"><span>3.6. Doctrines concerning mystical extraterrestrial life</span><span>241</span></li>
+<li class="sub"><span>3.7. National philosophical culture</span><span>247</span></li>
+<li class="sub"><span>3.8. The existential reason</span><span>252</span></li>
+<li class="top"><span>4. The concept of a project to proclaim a moral and ethical code of an axiological creed as a step toward solving problems</span><span>271</span></li>
+<li class="sub"><span>4.1. Calibrating moral action and the attributes of an absolute decision</span><span>275</span></li>
+<li class="sub"><span>4.2. Temporal loans and investments in time capital</span><span>281</span></li>
+<li class="sub"><span>4.3. A comparison of utilitarianism, pragmatism, and spiritual virtue</span><span>283</span></li>
+<li class="sub"><span>4.4. Deontology as the foundation of a normative-ethical system</span><span>284</span></li>
+<li class="sub"><span>4.5. Prerequisites, causes, and grounds for the manifestation of will and the implementation of a moral code</span><span>287</span></li>
+<li class="sub"><span>4.6. The architecture and privileges of a personal axiological credo</span><span>297</span></li>
+<li class="sub"><span>4.7. Expected effects and pitfalls of the concept</span><span>308</span></li>
+<li class="top"><span>CONCLUSION</span><span>317</span></li>
+<li class="top"><span>BIBLIOGRAPHY</span><span>322</span></li>
+<li class="top"><span>APPENDIX</span><span>327</span></li>
+</ul>
   </div></div>
 </dialog>
 </main>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem("theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -36,7 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVMM97PM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header><nav class="lang" aria-label="Language"><a href="./" hreflang="ru" lang="ru" aria-current="page">RU</a><a href="en/" hreflang="en" lang="en">EN</a></nav></header>
+<header><nav class="lang" aria-label="Language"><a href="./" hreflang="ru" lang="ru" aria-current="page">RU</a><a href="en/" hreflang="en" lang="en">EN</a></nav><button class="theme" id="theme" type="button" data-to-light="Включить светлую тему" data-to-dark="Включить тёмную тему" aria-label="Включить светлую тему" title="Включить светлую тему"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></header>
 <main>
 <section class="hero">
   <div class="left">
@@ -44,7 +45,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img id="cAudio" src="cover-audio.jpg" alt="Имманентный Разум: Абсолютное без Трансцендентного (Аудиокнига)">
       <img id="cEbook" src="cover-ebook-ru.jpg" alt="Имманентный Разум: Абсолютное без Трансцендентного (Электронная книга)" fetchpriority="high" onerror="this.onerror=null;this.src='cover-audio.jpg'">
     </div>
-    <button class="peek" id="peek" type="button" aria-haspopup="dialog">Читать демо-фрагмент</button>
+    <div class="peeks">
+      <button class="peek" type="button" data-open="toc" aria-haspopup="dialog">Посмотреть оглавление</button>
+      <button class="peek" type="button" data-open="excerpt" aria-haspopup="dialog">Читать демо-фрагмент</button>
+    </div>
   </div>
   <div class="right">
     <p class="author">Михаил Сергеев</p>
@@ -62,10 +66,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="tg">Для покупки необходим аккаунт Telegram.</p>
       <noscript><p class="tg"><a href="https://web.tribute.tg/p/HSg">Читать</a> · <a href="https://web.tribute.tg/p/HSj">Слушать</a> · <a href="https://web.tribute.tg/p/HSn">Всё вместе</a></p></noscript>
     </div>
+    <div class="channel"><img src="qr-ABSolute_INTelligence.jpg" alt="QR-код авторского Telegram-канала ABSolute INTelligence" width="112" height="107" loading="lazy"><p>Авторский Telegram-канал<br><span>ABSolute INTelligence</span></p></div>
   </div>
 </section>
 <dialog id="excerpt" aria-labelledby="exTitle">
-  <div class="dlg-head"><h2 id="exTitle">Фрагмент книги «Имманентный Разум»</h2><button class="close" id="close" type="button">Закрыть</button></div>
+  <div class="dlg-head"><h2 id="exTitle">Фрагмент книги «Имманентный Разум»</h2><button class="close" type="button">Закрыть</button></div>
   <div class="dlg-body"><p class="note">Половина вводной главы</p><div class="text">
 <h3 class="ch">0. Введение</h3>
 <p>Во введении будут рассмотрены общая методология, философские концепции с разной степенью дефектности, обоснование применения синтетического эклектизма, разбор диктаторских стимулов к воздействию на уязвимости разума, а также оправданность применения насилия в кризисном положении.</p>
@@ -128,6 +133,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Философская деконструкция трансцендентного в данной концепции отчасти развивает линию Фридриха Ницше и при этом опирается на принципы эпистемологии Поппера, позитивизма и научного скептицизма [36–37]. Новый подход основывается на онтологическом отрицании заблуждений как несуществующих в имманентной и объективной реальности. В этом контексте Ничто трактуется как онтологический синоним лжи, поскольку любое заблуждение бессущностно, если оно не привело к последствиям в объективной действительности.</p>
 <p>Уникальность подхода заключается в разрушении традиционной онтологической дихотомии между имманентным и трансцендентным при сохранении ценности имманентного и абсолютных понятий. Отвергаемая метафизика – это трансцендентное и все его производные (Бог, душа, эсхатология и пр.), поскольку они неотличимы от бессущностного Ничто. В то же время признаётся полезность метафизики на разных уровнях: на личностном – в форме экзистенциализма, на внешнем – как эпистемологический физикализм.</p>
 <p>Без создания мощной философской концепции последовательность, целостность и ёмкость адекватного мировоззрения всегда будут в большей или меньшей степени уступать мракобесным маргинальным аналогам. Таким образом, возникает стойкая необходимость в создании синтетической и эклектичной концепции, которая честно и последовательно давала бы исчерпывающие ответы на фундаментальные философские вопросы, при этом отважно, твёрдо и бескомпромиссно противостояла бы тем учениям, которые частично или полностью направлены против её принципов. Особенно актуальным этот запрос становится при внешнем диктующем давлении, оказываемом через мифологизированные идеологемы, опирающиеся на комплексную философскую парадигму.</p>
+  </div></div>
+</dialog>
+<dialog id="toc" aria-labelledby="tocTitle">
+  <div class="dlg-head"><h2 id="tocTitle">Оглавление книги «Имманентный Разум»</h2><button class="close" type="button">Закрыть</button></div>
+  <div class="dlg-body"><div class="text">
+<h3 class="ch">СОДЕРЖАНИЕ</h3>
+<ul class="toc">
+<li class="top"><span>Аннотация</span><span>1</span></li>
+<li class="top"><span>Дисклеймер</span><span>2</span></li>
+<li class="top"><span>Предисловие</span><span>3</span></li>
+<li class="top"><span>0. Введение</span><span>16</span></li>
+<li class="sub"><span>0.1. Антагонистические позиции</span><span>18</span></li>
+<li class="sub"><span>0.2. Необходимость и особенность синтетического эклектизма</span><span>42</span></li>
+<li class="sub"><span>0.3. Ценности притеснителя или угнетателя и эксплуатация изъянов разума</span><span>47</span></li>
+<li class="sub"><span>0.4. Может ли насилие быть меньшим из зол?</span><span>53</span></li>
+<li class="top"><span>1. Бессущностное трансцендентное как абсолютное Ничто</span><span>60</span></li>
+<li class="sub"><span>1.1. Ничто в онтологии</span><span>61</span></li>
+<li class="sub"><span>1.2. Абсолютность по сути</span><span>66</span></li>
+<li class="sub"><span>1.3. Бессущностное по существу</span><span>73</span></li>
+<li class="sub"><span>1.4. Трансцендентность как таковая</span><span>77</span></li>
+<li class="top"><span>2. Онтологическая структура абсолютно истинного знания имманентной реальности мира эмпирического абсолютизма</span><span>81</span></li>
+<li class="sub"><span>2.1. Метаморфозная трансформация</span><span>83</span></li>
+<li class="sub"><span>2.2. Концептуальные уровни</span><span>89</span></li>
+<li class="sub"><span>2.3. Эмпирический абсолютизм</span><span>94</span></li>
+<li class="sub"><span>2.4. Парадокс знания</span><span>109</span></li>
+<li class="sub"><span>2.5. Абсолютная (а)моральность</span><span>122</span></li>
+<li class="sub"><span>2.6. Пространство для мыслей и творчества</span><span>131</span></li>
+<li class="sub"><span>2.7. Прерогатива и интенция разума</span><span>143</span></li>
+<li class="top"><span>3. Деградация и примитивизация рационального бытия как следствие трансцендентного на контрасте с метафизикой экзистенциализма</span><span>172</span></li>
+<li class="sub"><span>3.1. Связность теологического и магического мышления</span><span>181</span></li>
+<li class="sub"><span>3.2. Преступления теизма и противоречия религии</span><span>184</span></li>
+<li class="sub"><span>3.3. Паразитирование, примитивизация и препарирование разума</span><span>201</span></li>
+<li class="sub"><span>3.4. Духовность как оковы для способного разума и её полезность в роли костыля для немощного и дисфункционального</span><span>211</span></li>
+<li class="sub"><span>3.5. Тоталитарность и религиозность, духовность и диктатура</span><span>225</span></li>
+<li class="sub"><span>3.6. Вероучения о мистической внеземной жизни</span><span>262</span></li>
+<li class="sub"><span>3.7. Национальная философская культура</span><span>269</span></li>
+<li class="sub"><span>3.8. Экзистенциальный разум</span><span>275</span></li>
+<li class="top"><span>4. Концепция проекта по декларации морально-этического кодекса аксиологического кредо как шаг к решению проблем</span><span>295</span></li>
+<li class="sub"><span>4.1. Калибровка морального поступка и атрибуты абсолютного решения</span><span>300</span></li>
+<li class="sub"><span>4.2. Темпоральные займы и инвестиции в капитал времени</span><span>306</span></li>
+<li class="sub"><span>4.3. Утилитаризм, прагматизм и духовная добродетель в сравнении</span><span>308</span></li>
+<li class="sub"><span>4.4. Деонтология как основа нормативно-этической системы</span><span>310</span></li>
+<li class="sub"><span>4.5. Предпосылки, причины и основания манифестации воли и имплементации морального кодекса</span><span>313</span></li>
+<li class="sub"><span>4.6. Архитектура и привилегии персонального аксиологического кредо</span><span>324</span></li>
+<li class="sub"><span>4.7. Ожидаемые эффекты и подводные камни концепции</span><span>336</span></li>
+<li class="top"><span>ЗАКЛЮЧЕНИЕ</span><span>346</span></li>
+<li class="top"><span>БИБЛИОГРАФИЧЕСКИЙ СПИСОК</span><span>352</span></li>
+<li class="top"><span>ПРИЛОЖЕНИЕ</span><span>357</span></li>
+</ul>
   </div></div>
 </dialog>
 </main>
