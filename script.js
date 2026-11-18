@@ -36,6 +36,19 @@
   };
   applyTheme(root.getAttribute("data-theme") === "light");
 
+  // Cookie: выбор запоминается; Google Tag Manager получает его через Consent Mode (по умолчанию «нет»)
+  const banner = $("#consent");
+  const saved = () => { try { return localStorage.getItem("cookie-consent"); } catch (e) { return null; } };
+  function setConsent(v) {
+    try { localStorage.setItem("cookie-consent", v); } catch (e) {}
+    if (window.gtag) gtag("consent", "update", { analytics_storage: v });
+    banner.hidden = true;
+  }
+  $("#consentYes").onclick = () => setConsent("granted");
+  $("#consentNo").onclick = () => setConsent("denied");
+  $("#cookieOpen").onclick = () => { banner.hidden = false; $("#consentYes").focus(); };
+  if (!saved()) banner.hidden = false;
+
   // Быстрый просмотр смещения обложек: добавьте к адресу ?x=-8 (в процентах)
   const sx = parseFloat(new URLSearchParams(location.search).get("x"));
   if (isFinite(sx)) $(".left").style.setProperty("--covers-x", sx + "%");
